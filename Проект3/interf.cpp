@@ -9,6 +9,7 @@ using namespace std;
 
 interf::interf()
 {
+	setlocale(LC_ALL, "Russian");
 	system("cls");
 	int menu;
 	cout << "1. Начать игру" << endl;
@@ -29,7 +30,7 @@ interf::~interf()
 {
 }
 
-bool interf::isKeyPressed(player &Player)
+bool interf::isKeyPressed(player &Player, field &Field)
 {
 	int button;
 	if (_kbhit())
@@ -53,8 +54,17 @@ bool interf::isKeyPressed(player &Player)
 				Player.moveRight();
 				return true;
 				break;
+			case KEY_FIRE:
+				Shooting();
+				return true;
+				break;
 		}
 	}
+}
+
+bool interf::Shooting()
+{
+	
 }
 
 void interf::StartGame()
@@ -64,11 +74,10 @@ void interf::StartGame()
 
 	while (!Field->GameOver())
 	{
-		if (isKeyPressed(*Player))
+		if (isKeyPressed(*Player, *Field))
 			Field->ReloadField(*Player);
+		
 	}
-
-	interf::~interf();
 
 }
 

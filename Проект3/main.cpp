@@ -7,5 +7,4 @@ using namespace std;
 int main() 
 {
 	interf *mainInter = new interf();
-
 }

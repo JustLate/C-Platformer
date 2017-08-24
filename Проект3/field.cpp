@@ -27,10 +27,10 @@ void field::PrintField()
 	}
 }
 
-void field::PlayerSetpos(const player &Player)
+void field::PlayerSetpos(player &Player)
 {
-	map[Player.posY][Player.posX] = '*';
-	map[Player.lastY][Player.lastX] = '0';
+	map[Player.getPosY()][Player.getPosX()] = Player.FIELD_PLAYER;
+	map[Player.getlastY()][Player.getlastX()] = FIELD_FLOOR;
 }
 
 bool field::GameOver()
@@ -38,10 +38,13 @@ bool field::GameOver()
 	return false;
 }
 
-void field::ReloadField(const player &Player)
+void field::ReloadField(player &Player)
 {
 	system("cls");
 	PlayerSetpos(Player);
 	PrintField();
+
+	cout << endl;
+	cout << Player.getPosX() << " : " << Player.getPosY() << endl;
 	
 }

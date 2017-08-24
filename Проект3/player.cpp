@@ -17,7 +17,7 @@ player::~player()
 
 bool player::moveDown()
 {
-	if (posY >= fieldW)
+	if (posY >= fieldW-1)
 		return false;
 	else
 	{
@@ -41,7 +41,7 @@ bool player::moveUp()
 
 bool player::moveLeft()
 {
-	if (posY <=0)
+	if (posX <=0)
 		return false;
 	else
 	{
@@ -53,7 +53,7 @@ bool player::moveLeft()
 
 bool player::moveRight()
 {
-	if (posY >= fieldH)
+	if (posX >= fieldH-1)
 		return false;
 	else
 	{
@@ -62,3 +62,29 @@ bool player::moveRight()
 		posX++;
 	}
 }
+
+int player::getPosX()
+{
+	return posX;
+}
+
+int player::getPosY()
+{
+	return posY;
+}
+
+int player::getlastX()
+{
+	return lastX;
+}
+
+int player::getlastY()
+{
+	return lastY;
+}
+
+int player::getHP()
+{
+	return HP;
+}
+

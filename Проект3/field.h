@@ -5,10 +5,11 @@ class field
 public:
 	field();
 	~field();
+	const char FIELD_FLOOR = '0';
 	char map[fieldW][fieldH];
 	void PrintField();
-	void PlayerSetpos(const player &Player);
+	void PlayerSetpos(player &Player);
 	bool GameOver();
-	void ReloadField(const player &Player);
+	void ReloadField(player &Player);
 };
 

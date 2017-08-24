@@ -8,7 +8,8 @@ public:
 	interf();
 	~interf();
 	void StartGame();
-	bool isKeyPressed(player &Player);
+	bool isKeyPressed(player &Player, field &Field);
+	bool Shooting();
 
 };
 
